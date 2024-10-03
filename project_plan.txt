@@ -3,7 +3,7 @@ Fri 4th - Sat 5th: Research on topic/dataset and refine project plan.
 Sun 6th – Tue 8th: Work/experiment on individual notebooks.
 Wed 9th – Thu 10th: Complete index notebook.
 Fri 11th – Sat 12th: Compile all project deliverables.
-Sun 14th: Submit project.
+Sun 13th: Submit project.
 
 Plan for NLP Sentiment Analysis Project on Twitter Data
 
@@ -50,6 +50,8 @@ Step 2: Multiclass Classification
     o	Deep Learning Models (e.g., LSTM, BERT-based models): To capture contextual information.
 
 6. Validation Strategy
+
+Implement a validation strategy that is relevant to the dataset and ML topic.
 
 •	Cross-Validation: Implement k-fold cross-validation to ensure the model's robustness and generalizability across different data subsets.
 •	Train-Test Split: Allocate a distinct portion of the data for final testing to evaluate model performance on unseen data.
