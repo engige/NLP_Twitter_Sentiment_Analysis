@@ -1,0 +1,74 @@
+Project Timeline
+Fri 4th - Sat 5th: Research on topic/dataset and refine project plan.
+Sun 6th – Tue 8th: Work/experiment on individual notebooks.
+Wed 9th – Thu 10th: Complete index notebook.
+Fri 11th – Sat 12th: Compile all project deliverables.
+Sun 14th: Submit project.
+
+Plan for NLP Sentiment Analysis Project on Twitter Data
+
+1. Introduction
+
+This plan outlines an approach to developing an advanced Natural Language Processing (NLP) model aimed at analyzing Twitter sentiment concerning Apple and Google products. The project leverages a dataset comprising over 9,000 Tweets, each annotated by human raters as positive, negative, or neutral. The primary objective is to build a robust sentiment classification model that can accurately predict the sentiment of Tweets based on their content, thereby providing valuable insights to stakeholders for informed decision-making.
+
+2. Business Problem and Stakeholder Definition
+
+•	Stakeholder: The primary stakeholders are the marketing and product development teams at Apple and Google. These teams seek to understand public sentiment towards their products to guide marketing strategies, product enhancements, and customer engagement initiatives.
+•	Business Problem: Apple and Google aim to monitor and analyze consumer sentiment on social media platforms to gauge public perception, identify areas for improvement, and tailor their marketing campaigns effectively. Accurate sentiment analysis of Tweets will enable these companies to respond proactively to customer feedback, enhance product offerings, and strengthen brand loyalty.
+
+3. Data Understanding and Suitability
+
+•	Dataset: The project utilizes a dataset from CrowdFlower via data.world, containing over 9,000 Tweets about Apple and Google products. Each Tweet is labeled with a sentiment classification: positive, negative, or neutral.
+•	Suitability: This dataset is well-suited for the business problem as it provides a sizable and diverse collection of real-time consumer opinions. The multi-class sentiment labels facilitate both binary (positive/negative) and multi-class classification tasks, allowing for scalable model development.
+•	Descriptive Statistics: Initial analysis will include the distribution of sentiment classes, frequency of Tweets related to each company, and common keywords or phrases associated with different sentiments.
+
+4. Data Preparation Strategy
+
+•	Data Cleaning: Address missing values, remove duplicates, and handle any inconsistencies in the text data.
+•	Text Preprocessing: Implement standard NLP preprocessing steps such as tokenization, stop-word removal, stemming/lemmatization, and handling of special characters or emojis.
+•	Feature Engineering:
+    o	Bag-of-Words (BoW) and TF-IDF: Convert text data into numerical features using BoW and Term Frequency-Inverse Document Frequency (TF-IDF) representations.
+    o	Word Embeddings: Explore advanced representations like Word2Vec or BERT embeddings to capture semantic relationships.
+    o	Sentiment-Specific Features: Incorporate sentiment lexicons or sentiment scores as additional features.
+•	Pipelines: Utilize scikit-learn pipelines to streamline the preprocessing and feature engineering steps, ensuring reproducibility and scalability.
+
+5. Modeling Approach
+
+Step 1: Binary Classification
+•	Objective: Classify Tweets as either positive or negative, excluding neutral sentiments.
+•	Models:
+    o	Logistic Regression: As a baseline model.
+    o	Support Vector Machines (SVM): For its effectiveness in text classification.
+    o	Random Forests: To capture non-linear relationships.
+•	Advanced Techniques: Implement ensemble methods or incorporate word embeddings for improved performance.
+
+Step 2: Multiclass Classification
+•	Objective: Classify Tweets into positive, negative, or neutral categories.
+•	Models:
+    o	Multinomial Naive Bayes: Suitable for multi-class text data.
+    o	Gradient Boosting Machines (e.g., XGBoost): For handling multiclass scenarios.
+    o	Deep Learning Models (e.g., LSTM, BERT-based models): To capture contextual information.
+
+6. Validation Strategy
+
+•	Cross-Validation: Implement k-fold cross-validation to ensure the model's robustness and generalizability across different data subsets.
+•	Train-Test Split: Allocate a distinct portion of the data for final testing to evaluate model performance on unseen data.
+•	Stratification: Maintain the distribution of sentiment classes in both training and testing sets to prevent class imbalance issues.
+
+7. Evaluation Metrics
+•	Binary Classification:
+    o	Accuracy: Overall correctness of the model.
+    o	Precision, Recall, F1-Score: To assess the model's performance on positive and negative classes.
+    o	ROC-AUC: To evaluate the trade-off between true positive and false positive rates.
+•	Multiclass Classification:
+    o	Macro and Micro F1-Scores: To account for class imbalances.
+    o	Confusion Matrix: To visualize misclassifications and identify patterns.
+    o	Weighted Accuracy: To provide a balanced view of model performance across classes.
+
+8. Communication and Documentation
+
+•	Comprehensive Report: Develop a detailed Jupyter Notebook that narrates the entire project lifecycle, from data understanding to model evaluation. The notebook will include:
+    o	Executive Summary: A 250-word abstract summarizing the business problem, data understanding, data preparation, modeling approach, evaluation metrics, and key findings.
+    o	Markdown Explanations: Justify each decision made during data preparation, modeling, and evaluation with clear, concise explanations.
+    o	Visualizations: Incorporate relevant charts and graphs to support data analysis and model performance insights.
+•	Presentation: Prepare a concise presentation highlighting the project's objectives, methodology, key results, limitations, and recommendations for stakeholders.
