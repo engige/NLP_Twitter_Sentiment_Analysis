@@ -14,7 +14,7 @@ This plan outlines an approach to developing an advanced Natural Language Proces
 2. Business Problem and Stakeholder Definition
 
 •	Stakeholder: The primary stakeholders are the marketing and product development teams at Apple and Google. These teams seek to understand public sentiment towards their products to guide marketing strategies, product enhancements, and customer engagement initiatives.
-•	Business Problem: Apple and Google aim to monitor and analyze consumer sentiment on social media platforms to gauge public perception, identify areas for improvement, and tailor their marketing campaigns effectively. Accurate sentiment analysis of Tweets will enable these companies to respond proactively to customer feedback, enhance product offerings, and strengthen brand loyalty.
+•	Business Problem: Apple and Google aim to monitor and analyze general consumer sentiment on social media platforms to gauge public perception and identify trends in how their products are received. A generalized sentiment analysis model based on Tweet content will help them quickly assess whether social media conversations about their products are positive, negative, or neutral. This will allow them to respond to broad public opinion more effectively, identify potential marketing opportunities, and enhance customer engagement.
 
 3. Data Understanding and Suitability
 
