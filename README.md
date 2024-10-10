@@ -1,3 +1,5 @@
+![header](images/word_cloud.png)
+
 # Tweet Text Sentiment Analysis Project
 
 ## Project Overview
@@ -34,15 +36,30 @@ During exploration, tweet length was analyzed, revealing most tweets to be of mo
 
 After cleaning and pre-processing, the data was prepared for sentiment classification. The sentiment labels were encoded appropriately for the binary classification and later for the multiclass classification. The data was split into an 80/20 train-test set, and a TF-IDF vectorizer was applied to transform the textual data into numerical features. Given the class imbalance in the dataset, SMOTE (Synthetic Minority Over-sampling Technique) was applied to the training data to balance the classes and ensure that sentiments were adequately represented for the machine learning models. This prepared the data for building robust sentiment classification models.
 
+![sentiment_tweetlength](images/sentiment_tweetlength.png)
+
+*The sentiment distribution is imbalanced, with most tweets having no emotion or positive sentiment as per the chart on the left, while tweet lengths mostly fall within a moderate range as per chart on the right, negating the need for truncation during tokenization.*
+
 ## Modeling
 
-### Modeling Summary
+### Binary Classification
 
 In this project, multiple binary classification models were trained to predict sentiment in Tweets about Apple and Google products. The models included **Logistic Regression**, **Random Forest**, and **Support Vector Machine (SVM)**. After tuning, **Logistic Regression** emerged as the best overall performer, achieving an accuracy of **88%**. Its strength lay in its ability to detect negative sentiments, with a recall of **0.61** and an F1-score of **0.62**—both outperforming SVM and Random Forest. While **SVM** had a slightly higher accuracy of **89%**, its lower recall and F1-score for negative sentiments made it less reliable for capturing this challenging class. Random Forest, with its recall of **0.36**, struggled similarly. Therefore, **Logistic Regression** was chosen as the most balanced model for binary sentiment analysis.
 
+![binary_log](images/binary_log.png)
+
+*The confusion matrix shows strong identification of positive tweets with few false negatives, while the ROC curve's AUC of 0.88 indicates that the logistic regression model has good discriminatory power in distinguishing between positive and negative classes*
+
+### Multiclass Classification
+
 For the multiclass sentiment classification task, two models were trained: **Multinomial Naive Bayes** and an **ensemble model** combining Multinomial Naive Bayes and Random Forest. The ensemble model achieved superior results, with an accuracy of **68%**, compared to Naive Bayes' **61%**. It performed better across all sentiment classes, particularly in improving the detection of negative sentiments and capturing neutral emotions. With a more balanced performance across positive, negative, and neutral classes, the ensemble model proved to be the preferred choice for multiclass sentiment classification, offering more reliable results for real-world applications.
 
-## Evaluation Metrics
+![multiclass_ensemble](images/multiclass_ensemble.png)
+
+*The confusion matrix and AUC scores indicate the model performs well in distinguishing negative tweets but struggles with higher misclassification rates between neutral and positive tweets, leading to moderate but less reliable performance for these classes.*
+
+
+### Model Evaluation Metrics
 
 The evaluation metrics used included Accuracy (proportion of correctly classified instances (both positive, negative, and neutral sentiments) out of the total instances), Precision (ratio of correctly predicted positive instances to the total instances predicted as positive), Recall (model's ability to identify all relevant instances of a class) and F1-Score (harmonic mean of precision and recall, providing a balanced metric when both precision and recall are important). The higher the metric, the better.
 
