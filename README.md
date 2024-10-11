@@ -70,3 +70,20 @@ This project successfully developed NLP sentiment classification models to analy
 - **Address Class Imbalance**: Collect more diverse data to improve representation of underrepresented sentiment classes, especially negative sentiment.
 - **Refine Pre-processing**: Implement more sophisticated techniques, such as handling negations and domain-specific language.
 - **Ongoing Monitoring and Retraining**: Regularly update the model to ensure accuracy as consumer sentiment evolves.
+
+## For More Information
+
+See the full analysis in the [Jupyter Notebook](./index.ipynb) or review this [Presentation](./presentation.pdf).
+
+## Repository Structure
+
+```
+├── README.md                                                 <- Top-level README for reviewers of this project
+├── index.ipynb                                               <- Narrative documentation of analysis in Jupyter notebook
+├── presentation.pdf                                          <- PDF version of project presentation
+├── notebook.pdf                                              <- PDF version of the index.ipynb
+├── github.pdf                                                <- The github repository pdf
+├── data_file                                                 <- Folder containing the tweet text data
+├── notebooks                                                 <- Folder containing group members jupyter notebooks
+└── images                                                    <- Generated from code
+```
