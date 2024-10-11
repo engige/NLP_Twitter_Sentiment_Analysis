@@ -1,6 +1,7 @@
 ![header](images/word_cloud.png)
 
 # Tweet Text Sentiment Analysis Project
+**Authors:** Phase4_Group6: *Mary Musyoka, Julian Kilyungi, Tabitha Kariuki, John Kul, Norah Oluoch and Joseph Ngige.*
 
 ## Project Overview
 
