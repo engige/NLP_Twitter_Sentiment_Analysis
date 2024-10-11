@@ -11,7 +11,7 @@ This project develops an NLP model to analyze sentiment in over 9,000 Tweets rel
 1. **Sentiment Classification**: Build a models to classify Tweets as positive, negative, or neutral, aiding sentiment analysis for Apple and Google.
 2. **Model Performance**: Optimize both binary (positive vs. negative) and multiclass (positive, negative, neutral) classifications.
 
-Two classification approaches—binary (positive vs. negative) and multiclass (positive, negative, neutral)—were implemented using models like Logistic Regression, Random Forest, and SVM for binary classification, and Multinomial Naive Bayes with an ensemble model for multiclass classification.
+The models developed can be deployed to analyze sentiments and to help provide actionable insights for stakeholders at Apple and Google, ensuring they can monitor public sentiment effectively and make informed decisions for marketing and product development.
 
 ## Business Understanding
 
