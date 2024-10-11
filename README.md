@@ -24,7 +24,7 @@ The models developed can be deployed to provide actionable insights for stakehol
 
 ## Data Understanding
 
-* **Dataset:** The project utilizes a dataset from CrowdFlower via data.world, containing over 9,000 Tweets about Apple and Google products. Each Tweet annotated by human raters with a sentiment classification: positive, negative, or neutral.
+* **Dataset:** The project utilizes a dataset from [CrowdFlower](https://data.world/crowdflower/brands-and-product-emotions) via data.world, containing over 9,000 Tweets about Apple and Google products. Each Tweet annotated by human raters with a sentiment classification: positive, negative, or neutral.
 
 * **Suitability:** This dataset is well-suited for the business problem as it provides a sizable and diverse collection of real-time consumer opinions. The multi-class sentiment labels facilitate both binary (positive/negative) and multi-class classification tasks, allowing for scalable model development.
 
