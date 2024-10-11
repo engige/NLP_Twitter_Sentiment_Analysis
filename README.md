@@ -5,17 +5,13 @@
 
 ## Project Overview
 
-This project aims to develop an advanced Natural Language Processing (NLP) model for analyzing sentiment in Tweets related to Apple and Google products. The dataset comprises over 9,000 Tweets labeled as positive, negative, or neutral by human raters. The objective is to create a robust generalized sentiment classification model that can accurately predict sentiment based on the content of the Tweets, providing Apple and Google with actionable insights for their marketing and product development teams. The goal is to help these stakeholders understand consumer perception, identify trends, and enhance customer engagement.
+This project develops an NLP model to analyze sentiment in over 9,000 Tweets related to Apple and Google products, labeled as positive, negative, or neutral. The goal is to create a robust sentiment classification model that predicts sentiment based on Tweet content, providing actionable insights for Apple and Google’s marketing and product development teams to better understand consumer perception, identify trends, and enhance engagement.
 
 ### Objectives:
-1. **Develop a Sentiment Classification Model**:
-   - Build an NLP model capable of accurately classifying Tweets as positive, negative, or neutral to help Apple and Google assess public opinion about their products.
-2. **Evaluate Model Performance for Binary and Multiclass Classification**:
-   - Optimize binary classification (positive vs. negative) and multiclass classification (positive, negative, neutral) to ensure high accuracy and balance across all classes, with a focus on improving the detection of negative sentiment.
-3. **Provide Business Insights to Stakeholders**:
-   - Use model results to provide insights on how Apple and Google can respond to public opinion, identify marketing opportunities, and enhance product development** strategies.
+1. **Sentiment Classification**: Build a models to classify Tweets as positive, negative, or neutral, aiding sentiment analysis for Apple and Google.
+2. **Model Performance**: Optimize both binary (positive vs. negative) and multiclass (positive, negative, neutral) classifications.
 
-The models developed can be deployed to provide actionable insights for stakeholders at Apple and Google, ensuring they can monitor public sentiment effectively and make informed decisions for marketing and product development.
+Two classification approaches—binary (positive vs. negative) and multiclass (positive, negative, neutral)—were implemented using models like Logistic Regression, Random Forest, and SVM for binary classification, and Multinomial Naive Bayes with an ensemble model for multiclass classification.
 
 ## Business Understanding
 
@@ -31,11 +27,9 @@ The models developed can be deployed to provide actionable insights for stakehol
 
 ## Data Exploration & Preparation
 
-The dataset initially contained 9,093 entries and three key columns: tweet_text, which represents the actual Tweet content, emotion_in_tweet_is_directed_at, and is_there_an_emotion_directed_at_a_brand_or_product, which holds the sentiment labels. Upon inspection, it was determined that the emotion_in_tweet_is_directed_at column had a large number of missing values (5,802), making it irrelevant for our primary task of sentiment classification, so it was dropped. Additionally, one row had a missing tweet_text value and was removed. The sentiment distribution showed a significant imbalance, with the majority of the tweets classified as "No emotion toward brand or product," followed by positive and negative emotions, highlighting the need for class-balancing techniques later in the pipeline.
+The dataset contained 9,093 entries and three key columns: tweet_text, emotion_in_tweet_is_directed_at, and sentiment labels. Due to 5,802 missing values in the emotion_in_tweet_is_directed_at column, it was dropped, along with one row missing tweet_text. The sentiment distribution showed an imbalance, with most tweets having no emotion, followed by positive and negative emotions, prompting the use of class-balancing techniques.
 
-During exploration, tweet length was analyzed, revealing most tweets to be of moderate length, which aligns with the character constraints of Twitter. A word cloud was generated to visualize the most frequent terms, showing that many tweets referenced event-specific terms like "SXSW" and included non-informative elements such as mentions and links. This prompted the decision to refine the text through pre-processing by converting text to lowercase, removing punctuation, tokenizing, removing stopwords, and lemmatizing to reduce words to their base form.
-
-After cleaning and pre-processing, the data was prepared for sentiment classification. The sentiment labels were encoded appropriately for the binary classification and later for the multiclass classification. The data was split into an 80/20 train-test set, and a TF-IDF vectorizer was applied to transform the textual data into numerical features. Given the class imbalance in the dataset, SMOTE (Synthetic Minority Over-sampling Technique) was applied to the training data to balance the classes and ensure that sentiments were adequately represented for the machine learning models. This prepared the data for building robust sentiment classification models.
+Tweet length analysis revealed most tweets were of moderate length, aligning with Twitter's constraints. Pre-processing included converting text to lowercase, removing punctuation, tokenizing, removing stopwords, and lemmatizing. Afterward, the data was split into an 80/20 train-test set and transformed using TF-IDF vectorization. SMOTE was applied to balance the classes for robust sentiment classification model development.
 
 ![sentiment_tweetlength](images/sentiment_tweetlength.png)
 
@@ -43,7 +37,7 @@ After cleaning and pre-processing, the data was prepared for sentiment classific
 
 ## Modeling
 
-### Binary Classification
+### Binary Classification Models
 
 In this project, multiple binary classification models were trained to predict sentiment in Tweets about Apple and Google products. The models included **Logistic Regression**, **Random Forest**, and **Support Vector Machine (SVM)**. After tuning, **Logistic Regression** emerged as the best overall performer, achieving an accuracy of **88%**. Its strength lay in its ability to detect negative sentiments, with a recall of **0.61** and an F1-score of **0.62**—both outperforming SVM and Random Forest. While **SVM** had a slightly higher accuracy of **89%**, its lower recall and F1-score for negative sentiments made it less reliable for capturing this challenging class. Random Forest, with its recall of **0.36**, struggled similarly. Therefore, **Logistic Regression** was chosen as the most balanced model for binary sentiment analysis.
 
@@ -51,14 +45,13 @@ In this project, multiple binary classification models were trained to predict s
 
 *The confusion matrix shows strong identification of positive tweets with few false negatives, while the ROC curve's AUC of 0.88 indicates that the logistic regression model has good discriminatory power in distinguishing between positive and negative classes*
 
-### Multiclass Classification
+### Multiclass Classification Models
 
 For the multiclass sentiment classification task, two models were trained: **Multinomial Naive Bayes** and an **ensemble model** combining Multinomial Naive Bayes and Random Forest. The ensemble model achieved superior results, with an accuracy of **68%**, compared to Naive Bayes' **61%**. It performed better across all sentiment classes, particularly in improving the detection of negative sentiments and capturing neutral emotions. With a more balanced performance across positive, negative, and neutral classes, the ensemble model proved to be the preferred choice for multiclass sentiment classification, offering more reliable results for real-world applications.
 
 ![multiclass_ensemble](images/multiclass_ensemble.png)
 
 *The confusion matrix and AUC scores indicate the model performs well in distinguishing negative tweets but struggles with higher misclassification rates between neutral and positive tweets, leading to moderate but less reliable performance for these classes.*
-
 
 ### Model Evaluation Metrics
 
@@ -70,18 +63,10 @@ We also included a confusion matrix (to show the true and predicted classes for 
 
 ## Conclusion
 
-The results of this project demonstrate the successful development of an NLP sentiment classification model aimed at analyzing consumer sentiment toward Apple and Google products on Twitter. For binary classification, Logistic Regression proved to be the most balanced model, achieving an accuracy of 88%, with a particularly strong performance in detecting negative sentiment. This is critical for stakeholders since negative sentiment often highlights areas for improvement in products and services. In the multiclass classification task, the ensemble model (Multinomial Naive Bayes + Random Forest) outperformed the standalone Naive Bayes model, achieving 68% accuracy with a well-balanced performance across positive, negative, and neutral sentiment classes. This indicates that the model can reliably provide actionable insights across all sentiment categories, helping Apple and Google make informed decisions about their products and customer engagement.
-
-The project successfully met its primary objectives by building robust general sentiment classification models that can be deployed to provide relevant insights to the marketing and product development teams at Apple and Google. The models were able to capture both positive and negative sentiments, with a special emphasis on improving the detection of negative sentiment, which is vital for addressing public concerns and enhancing product strategies. The ensemble model's superior performance in the multiclass task further ensures that neutral sentiments are well-handled, providing a comprehensive view of consumer opinions.
+This project successfully developed NLP sentiment classification models to analyze consumer sentiment on Twitter. Logistic Regression excelled in binary classification, achieving 88% accuracy, particularly strong in detecting negative sentiment, which is crucial for identifying areas needing improvement. For multiclass classification, the ensemble model (Multinomial Naive Bayes + Random Forest) outperformed the standalone Naive Bayes, achieving 68% accuracy with balanced performance across positive, negative, and neutral sentiments. When deployed, these models will help provide actionable insights for Apple and Google stakeholders, helping them make informed decisions about products and customer engagement.
 
 ### Recommendations:
-
-Based on the results and the nature of the data, the next steps should focus on:
-
-- **Improve Detection of Negative Sentiment**: Focus on enhancing the model’s ability to capture negative sentiments by exploring advanced techniques like **phrase extraction** or more sophisticated models such as BERT to capture nuanced expressions of negativity.
-  
-- **Address Class Imbalance**: Consider collecting more diverse data to better balance the representation of sentiment classes, particularly negative sentiment, which is often underrepresented in the dataset.
-
-- **Refine Pre-processing**: Implement more detailed pre-processing techniques (e.g., handling negations, domain-specific words) to improve model performance across all sentiment classes.
-
-- **Ongoing Monitoring and Retraining**: Regularly monitor and retrain the model as the social media landscape and consumer sentiment evolve, ensuring that the model continues to provide accurate insights over time.
+- **Enhance Negative Sentiment Detection**: Explore advanced methods like **phrase extraction** or models like BERT to capture nuanced negative expressions.
+- **Address Class Imbalance**: Collect more diverse data to improve representation of underrepresented sentiment classes, especially negative sentiment.
+- **Refine Pre-processing**: Implement more sophisticated techniques, such as handling negations and domain-specific language.
+- **Ongoing Monitoring and Retraining**: Regularly update the model to ensure accuracy as consumer sentiment evolves.
