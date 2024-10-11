@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-This project develops an NLP model to analyze sentiment in over 9,000 Tweets related to Apple and Google products, labeled as positive, negative, or neutral. The goal is to create a robust sentiment classification model that predicts sentiment based on Tweet content, providing actionable insights for Apple and Google’s marketing and product development teams to better understand consumer perception, identify trends, and enhance engagement.
+This project develops an NLP model to analyze sentiment in over 9,000 Tweets related to Apple and Google products, labeled as positive, negative, or neutral. The goal is to create a robust sentiment classification model that predicts sentiment based on Tweet content, and that could help provide actionable insights for Apple and Google’s marketing and product development teams to better understand consumer perception, identify trends, and enhance engagement.
 
 ### Objectives:
 1. **Sentiment Classification**: Build a models to classify Tweets as positive, negative, or neutral, aiding sentiment analysis for Apple and Google.
